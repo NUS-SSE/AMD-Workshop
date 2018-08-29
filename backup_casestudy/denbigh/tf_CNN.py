@@ -52,4 +52,5 @@ network = regression(network, optimizer='adam', learning_rate=learning_rate,
 					 
 model = tflearn.DNN(network, tensorboard_verbose=0)
 model.fit(X, Y, n_epoch = n_epoch, shuffle=True, validation_set=0.2, show_metric=True, batch_size=32)
+model.save('./model.tfl')
 

@@ -21,7 +21,7 @@ neurons_num = 128    # Number of neurons in the RNN layer
 keep_prob = 0.5	 # Keep probability for the drop-out regularization
 learning_rate = 0.001 # Learning rate for mini-batch SGD
 batch_size = 32		 # Batch size
-n_epoch = 100       # Number of epoch
+n_epoch = 1       # Number of epoch
 #Data preprocessing/ Converting data to vector for the 
 X = pad_sequences(X, maxlen=5, value=0.)
 Y = to_categorical(Y, 2)
@@ -35,4 +35,4 @@ net = tflearn.regression(net, optimizer='adam', learning_rate=learning_rate,
 model = tflearn.DNN(net, tensorboard_verbose=0)
 model.fit(X, Y, validation_set=0.2, show_metric=True,
 		batch_size=batch_size, n_epoch=n_epoch)	  
-model.save('./saved/tf/rnn_hydraulic/model.tfl')
+model.save('./model.tfl')
